@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 public class MouseLook : MonoBehaviour
 {
 
-    private Vector2 mouseSenitivity;
-    [SerializeField]private float pitch, yInput, yaw, xInput, maxVerticalAngle;
+    [SerializeField]private Vector2 mouseSenitivity;
+    [SerializeField]private float pitch, yaw, maxVerticalAngle;
+    private float yInput, xInput;
     private float xRotation = 0f;
 
     public Transform playerBody;
@@ -24,15 +25,21 @@ public class MouseLook : MonoBehaviour
         xInput = yaw * mouseSenitivity.x * Time.deltaTime;
 
         xRotation -= yInput;
+        xRotation -= ClampVerticalAngle(xRotation);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * xInput);
+        playerBody.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
+        Debug.Log(xRotation);
     }
 
-    public void Look(InputAction.CallbackContext context)
+    public void OnLook(InputValue context)
     {
-        pitch = context.ReadValue<Vector2>().y;
-        yaw = context.ReadValue<Vector2>().x;
+        pitch = context.Get<Vector2>().y;
+        yaw = context.Get<Vector2>().x;
     }
 
+    private float ClampVerticalAngle(float angle)
+    {
+        return Mathf.Clamp(angle, -maxVerticalAngle, maxVerticalAngle);
+    }
 }
