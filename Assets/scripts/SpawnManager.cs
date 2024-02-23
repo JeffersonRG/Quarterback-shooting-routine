@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public Vector3 spawnAreaMin; // Minimum position of the spawn area
     public Vector3 spawnAreaMax; // Maximum position of the spawn area
 
-    public float spawnInterval = 2f; // Interval between spawns
+    public float spawnInterval = 1f; // Interval between spawns
     private float timer = 0f;
 
     void Update()
@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
             GameObject newItem = Instantiate(itemsToSpawn[randomItemIndex], spawnPosition, itemsToSpawn[randomItemIndex].transform.rotation);
         }
     }
-
+     
     Vector3 GetRandomSpawnPosition()
     {
         // Generate a random position within the spawn area

@@ -3,32 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ShootProjectile : MonoBehaviour
+namespace SpaceAccuracy
 {
-    public Transform firePosition;
-    public GameObject projectilePrefab;
-    public float fireRate = 1.5f;
-    public float launchVelocity = 5000f;
-
-    private bool canFire = true;
-    private float nextFireTime;
-
-    private void FireProjectile()
+    public class ShootProjectile : MonoBehaviour
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePosition.position, firePosition.rotation);
-        projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchVelocity);
-    }
+        public Transform firePosition;
+        public GameObject projectilePrefab;
+        public float fireRate = 1.5f;
+        public float launchVelocity = 5000f;
+        public AudioSource audioSource;
+        private bool canFire = true;
+        private float nextFireTime;
 
-    public void OnFire(InputValue context)
-    {
-        if (context.isPressed)
+        private void FireProjectile()
         {
-            canFire = true;
-            FireProjectile(); // Fire projectile immediately when input is started
+            GameObject projectile = Instantiate(projectilePrefab, firePosition.position, firePosition.rotation);
+            projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchVelocity);
+            audioSource.Play();
         }
-        else if (context.isPressed == false)
+
+        public void FireInput(bool newFire)
         {
-            canFire = false;
+            if (newFire)
+            {
+                canFire = true;
+                FireProjectile(); // Fire projectile immediately when input is started
+            }
+            else if (newFire == false)
+            {
+                canFire = false;
+            }
+        }
+        public void OnFire(InputValue context)
+        {
+            if (context.isPressed)
+            {
+                canFire = true;
+                FireProjectile(); // Fire projectile immediately when input is started
+            }
+            else if (context.isPressed == false)
+            {
+                canFire = false;
+            }
         }
     }
 }
