@@ -11,6 +11,10 @@ public static class PreferencesManager
     {
         return PlayerPrefs.GetFloat("MasterVolume", 1);
     }
+    public static float GetMouseSensitivity()
+    {
+        return PlayerPrefs.GetFloat("MouseSensitivity", 5);
+    }
 
     public static void SetMusicVolume(float soundlevel)
     {
@@ -20,5 +24,9 @@ public static class PreferencesManager
     public static void SetMasterVolume(float soundlevel)
     {
         PlayerPrefs.SetFloat("MasterVolume", soundlevel);
+    }
+    public static void SetMouseSensitivity(float sensitivitylevel)
+    {
+        PlayerPrefs.SetFloat("MouseSensitivity", sensitivitylevel);
     }
 }

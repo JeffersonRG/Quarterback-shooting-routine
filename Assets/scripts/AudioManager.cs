@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     private static AudioManager instance;
 
-    public static AudioManager Instance { get { return instance;  } }
+    public static AudioManager Instance { get { return instance; } }
 
     public AudioMixer masterMixer;
 
@@ -33,9 +31,9 @@ public class AudioManager : MonoBehaviour
         masterMixer.SetFloat("MasterVol", PreferencesManager.GetMasterVolume());
         masterMixer.SetFloat("MusicVol", PreferencesManager.GetMusicVolume());
 
-        if(masterSlider != null)
+        if (masterSlider != null)
             PreferencesManager.GetMasterVolume();
-        if(musicSlider != null)
+        if (musicSlider != null)
             PreferencesManager.GetMusicVolume();
     }
 

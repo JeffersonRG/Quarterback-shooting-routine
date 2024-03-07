@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
@@ -8,11 +6,18 @@ public class DestroyOnCollision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the object collided with has a specific tag (optional).
-        if (collision.gameObject)
+        if (collision.gameObject.CompareTag("shot"))
         {
             Destroy(gameObject);
 
-            Score.Instance.AddPoint();
+            if (name.Contains("2"))
+            {
+                Score.Instance.AddPoint2();
+            }
+            else
+            {
+                Score.Instance.AddPoint();
+            }
         }
     }
 }

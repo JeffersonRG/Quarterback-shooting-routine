@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class spawnMangerP2 : MonoBehaviour
 {
     public GameObject[] itemsToSpawn; // Array of items to spawn
     public Vector3 spawnAreaMin; // Minimum position of the spawn area

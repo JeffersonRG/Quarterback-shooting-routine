@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     public Slider musicSlider;
     public Slider masterSlider;
+    public Slider sensitivitySlider;
 
     void Start()
     {
@@ -20,6 +19,10 @@ public class MenuManager : MonoBehaviour
         {
             musicSlider.value = PreferencesManager.GetMusicVolume();
         }
+        if (sensitivitySlider != null && sensitivitySlider.isActiveAndEnabled)
+        {
+            sensitivitySlider.value = PreferencesManager.GetMouseSensitivity();
+        }
     }
 
     public void ChangeSoundVolume(float soundLevel)
@@ -31,8 +34,13 @@ public class MenuManager : MonoBehaviour
     {
         AudioManager.Instance.ChangeMusicVolume(soundLevel);
     }
-public void PlayGame()
+    public void ChangeMouseSensitivity(float sensitivityLevel)
     {
+        PreferencesManager.SetMouseSensitivity(sensitivityLevel);
+    }
+    public void PlayGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
