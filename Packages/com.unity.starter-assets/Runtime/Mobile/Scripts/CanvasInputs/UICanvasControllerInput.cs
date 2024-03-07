@@ -1,4 +1,5 @@
 using UnityEngine;
+using SpaceAccuracy;
 
 
 namespace StarterAssets
@@ -8,26 +9,16 @@ namespace StarterAssets
        //ublic ShootProjectile shoot;
         [Header("Output")]
         public StarterAssetsInputs starterAssetsInputs;
-        public void VirtualMoveInput(Vector2 virtualMoveDirection)
-        {
-            starterAssetsInputs.MoveInput(virtualMoveDirection);
-        }
-
+        public ShootProjectile shoot;
         public void VirtualLookInput(Vector2 virtualLookDirection)
         {
             starterAssetsInputs.LookInput(virtualLookDirection);
         }
-
-        public void VirtualJumpInput(bool virtualJumpState)
+        public void VirtualonFireInput(bool virtualFire)
         {
-            starterAssetsInputs.JumpInput(virtualJumpState);
+            shoot.FireInput(virtualFire);
         }
 
-        public void VirtualSprintInput(bool virtualSprintState)
-        {
-            starterAssetsInputs.SprintInput(virtualSprintState);
-        }
-        
     }
 
 }
