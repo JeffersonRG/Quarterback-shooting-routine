@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using SpaceAccuracy;
 public class MenuManager : MonoBehaviour
 {
     public Slider musicSlider;

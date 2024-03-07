@@ -1,32 +1,35 @@
 using UnityEngine;
 
-public static class PreferencesManager
+namespace SpaceAccuracy
 {
-    public static float GetMusicVolume()
+    public static class PreferencesManager
     {
-        return PlayerPrefs.GetFloat("MusicVolume", 1);
-    }
+        public static float GetMusicVolume()
+        {
+            return PlayerPrefs.GetFloat("MusicVolume", 1);
+        }
 
-    public static float GetMasterVolume()
-    {
-        return PlayerPrefs.GetFloat("MasterVolume", 1);
-    }
-    public static float GetMouseSensitivity()
-    {
-        return PlayerPrefs.GetFloat("MouseSensitivity", 5);
-    }
+        public static float GetMasterVolume()
+        {
+            return PlayerPrefs.GetFloat("MasterVolume", 1);
+        }
+        public static float GetMouseSensitivity()
+        {
+            return PlayerPrefs.GetFloat("MouseSensitivity", 5);
+        }
 
-    public static void SetMusicVolume(float soundlevel)
-    {
-        PlayerPrefs.SetFloat("MusicVolume", soundlevel);
-    }
+        public static void SetMusicVolume(float soundlevel)
+        {
+            PlayerPrefs.SetFloat("MusicVolume", soundlevel);
+        }
 
-    public static void SetMasterVolume(float soundlevel)
-    {
-        PlayerPrefs.SetFloat("MasterVolume", soundlevel);
-    }
-    public static void SetMouseSensitivity(float sensitivitylevel)
-    {
-        PlayerPrefs.SetFloat("MouseSensitivity", sensitivitylevel);
+        public static void SetMasterVolume(float soundlevel)
+        {
+            PlayerPrefs.SetFloat("MasterVolume", soundlevel);
+        }
+        public static void SetMouseSensitivity(float sensitivitylevel)
+        {
+            PlayerPrefs.SetFloat("MouseSensitivity", sensitivitylevel);
+        }
     }
 }

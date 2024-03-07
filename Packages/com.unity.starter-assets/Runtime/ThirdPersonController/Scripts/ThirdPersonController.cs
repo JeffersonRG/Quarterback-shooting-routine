@@ -2,6 +2,7 @@
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
+using SpaceAccuracy;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -135,6 +136,7 @@ namespace StarterAssets
 
         private void Start()
         {
+            mouseSenitivity = new Vector2(PreferencesManager.GetMouseSensitivity(), PreferencesManager.GetMouseSensitivity());
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
