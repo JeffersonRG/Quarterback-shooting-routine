@@ -19,5 +19,9 @@ public class DestroyOnCollision : MonoBehaviour
                 Score.Instance.AddPoint();
             }
         }
+        if (collision.gameObject.CompareTag("Target"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

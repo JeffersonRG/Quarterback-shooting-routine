@@ -357,8 +357,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21911891}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 691016478}
+        m_TargetAssemblyTypeName: MenuManager, SpaceAccuracy
         m_MethodName: ChangeMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -1094,13 +1094,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 691016478}
+        m_TargetAssemblyTypeName: MenuManager, SpaceAccuracy
+        m_MethodName: ChangeMouseSensitivity
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 25428442}
   masterSlider: {fileID: 1376946501}
-  sensitivitySlider: {fileID: 0}
+  sensitivitySlider: {fileID: 389256946}
 --- !u!114 &691016479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3272,8 +3272,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21911891}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 691016478}
+        m_TargetAssemblyTypeName: MenuManager, SpaceAccuracy
         m_MethodName: ChangeSoundVolume
         m_Mode: 0
         m_Arguments:

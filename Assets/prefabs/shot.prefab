@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8404360107991892087}
   - component: {fileID: 4556841472723118166}
   - component: {fileID: 211076081767998436}
-  - component: {fileID: -4273132316196577381}
+  - component: {fileID: 6571259888414917252}
+  - component: {fileID: 1818262434344737478}
   m_Layer: 0
   m_Name: shot
   m_TagString: shot
@@ -117,7 +118,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -134,7 +135,19 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &-4273132316196577381
+--- !u!114 &6571259888414917252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081456456072830124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb45bedb69f66a74481f190bb5d5cf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1818262434344737478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,4 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e58295b3c906134081c35d52e19f842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 0.2
