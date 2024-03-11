@@ -12,12 +12,19 @@ namespace SpaceAccuracy
         public AudioSource audioSource;
         private bool canFire = true;
         private float nextFireTime;
+        public static int shotCount = 0;
 
+        public void Start()
+        {
+            shotCount = 0;
+        }
         private void FireProjectile()
         {
             GameObject projectile = Instantiate(projectilePrefab, firePosition.position, firePosition.rotation);
             projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchVelocity);
             audioSource.Play();
+            shotCount++;
+
         }
 
         public void FireInput(bool newFire)

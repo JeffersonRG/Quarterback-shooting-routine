@@ -6,12 +6,14 @@ public class GameOverManager : MonoBehaviour
 {
     public Text highscore;
     public Text score;
+    public Text Accuracy;
 
     public void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         highscore.text = $"Highscore: {PlayerPrefs.GetInt("highscore", 0).ToString()}";
         score.text = $"Score: {Score.score.ToString()}";
+        Accuracy.text = $"ACCURACY: {Score.accuracy}%";
     }
     public void Menu()
     {

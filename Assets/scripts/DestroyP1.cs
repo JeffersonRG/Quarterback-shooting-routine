@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
+    
     // This function is called when the Collider other enters the trigger.
     void OnCollisionEnter(Collision collision)
     {
@@ -22,6 +23,7 @@ public class DestroyOnCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Target"))
         {
             Destroy(gameObject);
+            Score.hitCount++;
         }
     }
 }
