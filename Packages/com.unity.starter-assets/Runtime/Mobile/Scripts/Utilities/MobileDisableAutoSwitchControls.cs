@@ -1,4 +1,4 @@
-/*
+    /*
 The PlayerInput component has an auto-switch control scheme action that allows automatic changing of connected devices.
 IE: Switching from Keyboard to Gamepad in-game.
 When built to a mobile phone; in most cases, there is no concept of switching connected devices as controls are typically driven through what is on the device's hardware (Screen, Tilt, etc)
@@ -8,28 +8,18 @@ For the time-being; this script will disable a PlayerInput's auto switch control
 */
 
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-#endif
 
 public class MobileDisableAutoSwitchControls : MonoBehaviour
 {
-    
-#if ENABLE_INPUT_SYSTEM && (UNITY_IOS || UNITY_ANDROID)
 
-    [Header("Target")]
-    public PlayerInput playerInput;
+#if (UNITY_IOS || UNITY_ANDROID)
 
-    void Start()
+#else 
+    private void Start()
     {
-        DisableAutoSwitchControls();
+        Destroy(gameObject);
     }
-
-    void DisableAutoSwitchControls()
-    {
-        playerInput.neverAutoSwitchControlSchemes = true;
-    }
-
 #endif
-    
+
 }
